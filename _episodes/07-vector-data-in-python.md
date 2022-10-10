@@ -46,7 +46,7 @@ import geopandas as gpd
 ~~~
 {: .language-python}
 
-We will use the `geopandas` module to load the crop field vector data we downloaded at: `data/brpgewaspercelen_definitief_2020.gpkg`. This file contains data for the entirety of the European portion of the Netherlands, resulting in a very large number of crop field parcels. Directly loading the whole file to memory can be slow. Let's consider as Area of Interest (AoI) northern Amsterdam, which is a small portion of the Netherlands. We only need to load this part.
+We will use the `geopandas` module to load the crop field vector data we downloaded at: `data/brpgewaspercelen_definitief_2020_small.gpkg`. This file contains data for the entirety of the European portion of the Netherlands, resulting in a very large number of crop field parcels. Directly loading the whole file to memory can be slow. Let's consider as Area of Interest (AoI) northern Amsterdam, which is a small portion of the Netherlands. We only need to load this part.
 
 We define a bounding box, and will only read the data within the extent of the bounding box.
 ~~~
@@ -65,7 +65,7 @@ Using the `bbox` input argument, we can load only the spatial features intersect
 
 ~~~
 # Partially load data within the bounding box
-cropfield = gpd.read_file("data/brpgewaspercelen_definitief_2020.gpkg", bbox=bbox)
+cropfield = gpd.read_file("data/brpgewaspercelen_definitief_2020_small.gpkg", bbox=bbox)
 ~~~
 {: .language-python}
 
