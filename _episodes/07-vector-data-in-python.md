@@ -59,6 +59,8 @@ bbox = (xmin, ymin, xmax, ymax)
 
 > ## How should I define my bounding box?
 > For simplicity, here we assume the **Coordinate Reference System (CRS)** and **extent** of the vector file are known (for instance they are provided in the dataset documentation). Some Python tools, e.g. [`fiona`](https://fiona.readthedocs.io/en/latest/)(which is also the backend of `geopandas`), provides the file inspection functionality without actually the need to read the full data set into memory. An example can be found in [the documentation of fiona](https://fiona.readthedocs.io/en/latest/manual.html#format-drivers-crs-bounds-and-schema).
+> 
+> Since we are working with a dataset in the Netherlands, the extent of the bounding box is in the Dutch RD coordinate system (Rijksdriehoeksmeting). To draw bounding box in RD, one can use the [RD-viewer](https://openstate.github.io/rdnewviewer/)
 {: .callout}
 
 Using the `bbox` input argument, we can load only the spatial features intersecting the provided bounding box.
